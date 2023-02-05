@@ -17,9 +17,9 @@ export default function CreateTodo() {
     setTodo(obj)
   }
 
-  const createTodo = (event) => {
+  const createtodo = (event) => {
     const { name } = event.target
-    if (event.key === "Enter" || name === 'addTodo') {
+    if (event.key === "Enter" || name === 'addtodo') {
       if (todo.title !== '') {
         todos.unshift(todo)
         localStorage.setItem('todos', JSON.stringify(todos))
@@ -56,20 +56,20 @@ export default function CreateTodo() {
 
 
   return (
-    <>
+    <div >
       <div className='box'>
         <div className="text-end">
           <h2>React Todo App</h2>
           <h4>Add a new Todo</h4>
         </div>
         <div className='text-todo'>
-          <input type="text" name='todo' placeholder='Write here...' value={todo.title} onKeyPress={createTodo} onChange={onchange} />
-          <button className='btn-todo' type='button' name='addtodo' onClick={createTodo}>Add Todo</button>
+          <input type="text" name='todo' placeholder='Write here...' value={todo.title} onKeyPress={createtodo} onChange={onchange} />
+          <button className='btn-todo' type='button' name='addtodo' onClick={createtodo}>Add Todo</button>
         </div>
       </div>
       <TodoList todoArr={todoArr}
         completeTodo={completeTodo}
         deleteTodo={deleteTodo} />
-    </>
+    </div>
   )
 }
